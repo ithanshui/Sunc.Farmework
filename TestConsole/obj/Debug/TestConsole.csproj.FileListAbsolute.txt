@@ -1,0 +1,5 @@
+E:\VsGit\Sunc.framework\TestConsole\bin\Debug\TestConsole.exe.config
+E:\VsGit\Sunc.framework\TestConsole\bin\Debug\TestConsole.exe
+E:\VsGit\Sunc.framework\TestConsole\bin\Debug\TestConsole.pdb
+E:\VsGit\Sunc.framework\TestConsole\obj\Debug\TestConsole.exe
+E:\VsGit\Sunc.framework\TestConsole\obj\Debug\TestConsole.pdb
