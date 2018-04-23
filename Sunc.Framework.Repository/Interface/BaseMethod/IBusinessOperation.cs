@@ -62,5 +62,12 @@ namespace Sunc.Framework.Repository.Interface.BaseMethod
         /// <param name="key"></param>
         /// <returns></returns>
         bool IsHave(Key key);
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        ResultStatus UpdateEntity(Entity entity);
     }
 }

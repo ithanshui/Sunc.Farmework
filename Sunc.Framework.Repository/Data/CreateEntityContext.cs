@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Sunc.Framework.Repository.Entity;
@@ -19,26 +20,26 @@ namespace Sunc.Framework.Repository.Data
     {
         public CreateEntityContext() : base() { }
         public CreateEntityContext(string configurationStr) : base(configurationStr) { }
-        public int Delete<T>(T entity) where T : ModelBase
+        public int Delete<T>(T entity) where T : DatabaseModel
         {
             this.Entry<T>(entity).State = EntityState.Deleted;
             return SaveChanges();
         }
 
-        public int Insert<T>(T entity) where T : ModelBase
+        public int Insert<T>(T entity) where T : DatabaseModel
         {
             this.Set<T>().Add(entity);
             return SaveChanges();
         }
 
-        public T InsertModel<T>(T entity) where T : ModelBase
+        public T InsertModel<T>(T entity) where T : DatabaseModel
         {
             this.Set<T>().Add(entity);
             SaveChanges();
             return entity;
         }
 
-        public int Update<T>(T entity) where T : ModelBase
+        public int Update<T>(T entity) where T : DatabaseModel
         {
             try
             {
@@ -58,7 +59,7 @@ namespace Sunc.Framework.Repository.Data
             return 0;
         }
 
-        public T UpdateModel<T>(T entity) where T : ModelBase
+        public T UpdateModel<T>(T entity) where T : DatabaseModel
         {
             var set = this.Set<T>();
             set.Attach(entity);
@@ -83,5 +84,6 @@ namespace Sunc.Framework.Repository.Data
             }
             return count;
         }
+
     }
 }

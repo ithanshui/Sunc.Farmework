@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,5 +27,15 @@ namespace Sunc.Framework.Repository.Entity.Extension
             count = source.Count();
             return source.OrderBy(order).Skip((page - 1) * size).Take(size);
         }
+
+        public static V ToModel<T, V>(this T t) where T : ModelBase, V where V : ModelBase
+        {
+            return t;
+        }
+        public static string ToJson(this IQueryable<DatabaseModel> models)
+        {
+            return EntityBase.ToJson(models);
+        }
+
     }
 }

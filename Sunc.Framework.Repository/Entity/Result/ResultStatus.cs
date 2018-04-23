@@ -53,5 +53,10 @@ namespace Sunc.Framework.Repository.Entity.Result
         {
             base.SetProprty(status, assertion, msg);
         }
+
+        public static ResultStatus CreateResultStatus(StatusBase statusBase = StatusBase.NOT_FIND, string msg = "", object obj = null)
+        {
+            return new ResultStatus(statusBase, msg,obj);
+        }
     }
 }

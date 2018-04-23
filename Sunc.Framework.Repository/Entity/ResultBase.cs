@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace Sunc.Framework.Repository.Entity
 {
     [Serializable]
-    public abstract class ResultBase
+    public abstract class ResultBase:EntityBase
     {
       
         /// <summary>
@@ -52,12 +52,12 @@ namespace Sunc.Framework.Repository.Entity
             this.Msg = msg;
         }
 
-        public string ToJson()
-        {
-            JsonSerializerSettings st = new JsonSerializerSettings();
-            st.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-           return  JsonConvert.SerializeObject(this, st);
-        }
+        //public string ToJson()
+        //{
+        //    JsonSerializerSettings st = new JsonSerializerSettings();
+        //    st.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+        //   return  JsonConvert.SerializeObject(this, st);
+        //}
 
     }
 }

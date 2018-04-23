@@ -16,7 +16,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -40,6 +40,10 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
@@ -53,7 +57,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -93,14 +97,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Configuration\EntityTypeConfigurationSunc.cs" />
     <Compile Include="Data\CreateEntityContext.cs" />
     <Compile Include="Data\DataOperation\AbsBase.cs" />
     <Compile Include="Data\DataOperation\AbsDataLayerBase.cs" />
     <Compile Include="Data\DataOperation\WebAbs\ResultClass.cs" />
     <Compile Include="Data\EntityContext.cs" />
     <Compile Include="Data\EntityContextLimit.cs" />
+    <Compile Include="Entity\Carrier\Extension\KeyValueUtil.cs" />
     <Compile Include="Entity\Carrier\KeyValueBase.cs" />
+    <Compile Include="Entity\DatabaseModel.cs" />
     <Compile Include="Entity\EntityBase.cs" />
+    <Compile Include="Entity\Extension\ExtensionICollection.cs" />
     <Compile Include="Entity\Extension\ExtensionIQueryable.cs" />
     <Compile Include="Entity\Extension\StatusBaseEnumExtension.cs" />
     <Compile Include="Entity\ModelBase.cs" />

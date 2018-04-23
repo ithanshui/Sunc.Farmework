@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sunc.Framework.Repository.Entity;
 
 namespace Sunc.Framework.Repository.Data
 {
@@ -18,6 +19,6 @@ namespace Sunc.Framework.Repository.Data
             Database.SetInitializer<EntityContext>(new CreateDatabaseIfNotExists<EntityContext>());
         }
         public EntityContext() : base() { }
-        public EntityContext(string configurationStr) : base(configurationStr) { }
+        public EntityContext(string configurationStr) : base(configurationStr) {}
     }
 }

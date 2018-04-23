@@ -24,7 +24,10 @@ namespace Sunc.Framework.Repository.Utility.SuncLog4net
         }
         protected static void WriteSwitch(ILog log, LogEnum log_enum, object mess, Exception ex)
         {
-            string jsonStr = JsonConvert.SerializeObject(mess);
+            if (mess == null) return;
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            string jsonStr = JsonConvert.SerializeObject(mess, setting);
             switch (log_enum)
             {
                 case LogEnum.Debug:

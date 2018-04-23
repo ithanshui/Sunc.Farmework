@@ -22,7 +22,9 @@ E:\VsGit\Sunc.framework\Sunc.Framework.Repository\bin\Debug\System.Web.Razor.xml
 E:\VsGit\Sunc.framework\Sunc.Framework.Repository\bin\Debug\System.Web.WebPages.xml
 E:\VsGit\Sunc.framework\Sunc.Framework.Repository\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\VsGit\Sunc.framework\Sunc.Framework.Repository\bin\Debug\System.Web.WebPages.Razor.xml
-E:\VsGit\Sunc.framework\Sunc.Framework.Repository\obj\Debug\Sunc.Framework.Repository.csprojResolveAssemblyReference.cache
 E:\VsGit\Sunc.framework\Sunc.Framework.Repository\obj\Debug\Sunc.Framework.Repository.csproj.ResolveComReference.cache
 E:\VsGit\Sunc.framework\Sunc.Framework.Repository\obj\Debug\Sunc.Framework.Repository.dll
 E:\VsGit\Sunc.framework\Sunc.Framework.Repository\obj\Debug\Sunc.Framework.Repository.pdb
+E:\VsGit\Sunc.framework\Sunc.Framework.Repository\bin\Debug\EntityFramework.Extended.dll
+E:\VsGit\Sunc.framework\Sunc.Framework.Repository\bin\Debug\EntityFramework.Extended.xml
+E:\VsGit\Sunc.framework\Sunc.Framework.Repository\obj\Debug\Sunc.Framework.Repository.csprojResolveAssemblyReference.cache

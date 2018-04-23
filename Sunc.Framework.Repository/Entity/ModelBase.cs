@@ -9,5 +9,7 @@ namespace Sunc.Framework.Repository.Entity
     
     public  class ModelBase: EntityBase
     {
+
+       
     }
 }

@@ -10,14 +10,50 @@ using Sunc.Framework.Repository.Utility.SuncLog4net.Model;
 namespace Sunc.Framework.Repository.Entity
 {
     [Serializable]
-    public class EntityBase
+    public abstract class EntityBase
     {
-        public string ToJson()
+        public EntityBase()
         {
+
+        }
+        private static JsonSerializerSettings _setting;
+
+        /// <summary>
+        /// 序列化设置
+        /// </summary>
+        public static JsonSerializerSettings Setting
+        {
+            set
+            {
+                if (value == null)
+                {
+                    _setting = new JsonSerializerSettings();
+                    _setting.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                }
+                else
+                {
+                    _setting = value;
+                }
+            }
+            get
+            {
+                return _setting;
+            }
+        }
+
+        
+        /// <summary>
+        /// 序列化
+        /// </summary>
+        /// <returns></returns>
+        public static string ToJson(object model, JsonSerializerSettings setting = null)
+        {
+            if (model == null)
+                return null;
             string json = string.Empty;
             try
             {
-                json = JsonConvert.SerializeObject(this);
+                json = JsonConvert.SerializeObject(model, setting ?? _setting);
             }
             catch (JsonException ex)
             {
@@ -31,5 +67,52 @@ namespace Sunc.Framework.Repository.Entity
 
 
         }
+
+        /// <summary>
+        /// 反序列化
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="jsonStr"></param>
+        /// <returns></returns>
+        public static object ConvertToEntity<T>(string jsonStr, JsonSerializerSettings setting = null)
+        {
+            if (string.IsNullOrEmpty(jsonStr))
+                return null;
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(jsonStr, setting ?? _setting);
+            }
+            catch (Exception err)
+            {
+                Log4Helper.WriteLog<EntityBase>(new Log4Extension { action_log = LogEnum.None, log_enum = LogEnum.Error, itemObject = err.Message }, LogEnum.Error, err);
+            }
+            return null;
+        }
+
+
+        /// <summary>
+        /// 序列化
+        /// </summary>
+        /// <returns></returns>
+        public virtual string ToJson()
+        {
+            string json = string.Empty;
+            try
+            {
+                json = JsonConvert.SerializeObject(this, _setting);
+            }
+            catch (JsonException ex)
+            {
+                Log4Helper.WriteLog<EntityBase>(new Log4Extension { action_log = LogEnum.None, log_enum = LogEnum.Error, itemObject = ex.Message }, LogEnum.Error, ex);
+            }
+            catch (Exception ex)
+            {
+                Log4Helper.WriteLog<EntityBase>(new Log4Extension { action_log = LogEnum.None, log_enum = LogEnum.Error, itemObject = ex.Message }, LogEnum.Error, ex);
+            }
+            return json;
+
+
+        }
+
     }
 }
