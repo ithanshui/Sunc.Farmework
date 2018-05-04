@@ -110,6 +110,19 @@ namespace Sunc.Framework.Repository.Entity
                 _Source = value;
             }
         }
+        private object _objEntity;
+        public object ObjEntity
+        {
+            get
+            {
+                return _objEntity;
+            }
+
+            set
+            {
+                _objEntity = value;
+            }
+        }
 
         public void AddRange(IEnumerable<Entity> collections, int pageIndex = 1, int pageSize = 10, int count = 0)
         {

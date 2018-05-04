@@ -9,7 +9,6 @@ namespace Sunc.Framework.Repository.Entity
     
     public  class ModelBase: EntityBase
     {
-
-       
+        public object obj { set; get; }
     }
 }

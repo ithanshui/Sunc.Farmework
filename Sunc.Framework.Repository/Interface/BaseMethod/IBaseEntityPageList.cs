@@ -8,6 +8,7 @@ namespace Sunc.Framework.Repository.Interface.BaseMethod
 {
     public interface IBaseEntityPageList<Entity>
     {
+        object ObjEntity { set; get; }
         int Count
         {
             get;
