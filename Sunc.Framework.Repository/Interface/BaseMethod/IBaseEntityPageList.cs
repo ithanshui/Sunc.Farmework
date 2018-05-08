@@ -6,39 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sunc.Framework.Repository.Interface.BaseMethod
 {
-    public interface IBaseEntityPageList<Entity>
+    public interface IBaseEntityPageList<Entity>: IBasePageList
     {
-        object ObjEntity { set; get; }
-        int Count
-        {
-            get;
-        }
-
-        int PageIndex
-        {
-            get;
-        }
-
-        int PageSize
-        {
-            get;
-        }
-
-        int PageCount
-        {
-            get;
-        }
-
-        bool Next
-        {
-            get;
-        }
-
-        bool Previous
-        {
-            get;
-        }
-
+        
         List<Entity> Source
         {
             get;

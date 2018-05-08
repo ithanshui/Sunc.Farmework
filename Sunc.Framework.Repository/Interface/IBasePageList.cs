@@ -7,9 +7,39 @@ using Sunc.Framework.Repository.Interface.BaseMethod;
 
 namespace Sunc.Framework.Repository.Interface
 {
-    public interface IBasePageList<T>
+    public interface IBasePageList
     {
-      
-        IBaseEntityPageList<T> GetPageList(int pageIndex = 1, int pageSize = 10);
+        int Count
+        {
+            get;
+        }
+
+        int PageIndex
+        {
+            get;
+        }
+
+        int PageSize
+        {
+            get;
+        }
+
+        int PageCount
+        {
+            get;
+        }
+
+        bool Next
+        {
+            get;
+        }
+
+        bool Previous
+        {
+            get;
+        }
+        object ObjEntity { set; get; }
+
+        
     }
 }

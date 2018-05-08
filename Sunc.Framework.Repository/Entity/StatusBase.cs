@@ -18,6 +18,11 @@ namespace Sunc.Framework.Repository.Entity
         [Description("成功")]
         SUCCESS = 200,
 
+        /// <summary>
+        /// 已存在
+        /// </summary>
+        [Description("已存在")]
+        ALREADY_EXISTING = 300,
 
         /// <summary>
         /// 未获取

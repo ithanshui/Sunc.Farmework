@@ -123,7 +123,11 @@ namespace Sunc.Framework.Repository.Entity
                 _objEntity = value;
             }
         }
-
+        public PageListBase(){}
+        public PageListBase(IEnumerable<Entity> collections, int pageIndex = 1, int pageSize = 10, int count = 0)
+        {
+            AddRange(collections, pageIndex, pageSize, count);
+        }
         public void AddRange(IEnumerable<Entity> collections, int pageIndex = 1, int pageSize = 10, int count = 0)
         {
             if (collections == null && collections.Count() == 0)
